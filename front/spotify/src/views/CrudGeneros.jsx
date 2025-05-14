@@ -33,7 +33,7 @@ function CrudGeneros() {
     if (modoEdicion) {
       await axios.put(`${API_URL}/generos/${generoSeleccionado.id}`, {
         nombre: formData.nombre,
-        imagen: generoSeleccionado.imagen, // fallback si no se sube nueva
+        imagen: generoSeleccionado.imagen,
       });
 
       if (formData.imagen) {
@@ -44,7 +44,7 @@ function CrudGeneros() {
     } else {
       const res = await axios.post(`${API_URL}/generos`, {
         nombre: formData.nombre,
-        imagen: "", // temporal
+        imagen: "", 
       });
 
       if (formData.imagen) {
