@@ -52,10 +52,10 @@ exports.putGeneroUpdate = async (req, res) => {
     if (!genero) return res.status(404).send({ message: "Género no encontrado" });
 
     const { nombre } = req.body;
-    // Si no se envió nombre, usamos el anterior
+    
     genero.nombre = nombre ?? genero.nombre;
 
-    // No actualizar imagen aquí, se hace en uploadFoto
+    
     await genero.save();
     res.send(genero);
 };
@@ -72,7 +72,7 @@ exports.patchGeneroUpdate = async (req, res) => {
 
     const { nombre, imagen } = req.body;
 
-    // Solo actualiza los campos que llegan en el body
+    
     if (nombre !== undefined) genero.nombre = nombre;
     if (imagen !== undefined) genero.imagen = imagen;
 

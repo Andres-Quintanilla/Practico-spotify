@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function ListaCanciones() {
-  const { id } = useParams(); // id del álbum
+  const { id } = useParams(); 
   const [canciones, setCanciones] = useState([]);
 
   useEffect(() => {

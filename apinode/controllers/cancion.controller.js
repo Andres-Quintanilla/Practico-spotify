@@ -40,7 +40,7 @@ exports.postCancionCreate = async (req, res) => {
   
       const nueva = await db.cancion.create({
         nombre,
-        archivo: "", // temporalmente vacío
+        archivo: "", 
         albumId
       });
   
@@ -88,7 +88,7 @@ exports.putCancionUpdate = async (req, res) => {
 
     const { nombre, albumId } = req.body;
 
-    // Solo actualiza lo necesario, NO se toca el archivo aquí
+    
     cancion.nombre = nombre ?? cancion.nombre;
     cancion.albumId = albumId ?? cancion.albumId;
 
